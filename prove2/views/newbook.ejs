@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/pretty.css" />
+    <title>Document</title>
+</head>
+<body>
+    <header><h1>Prove 2</h1></header>
+    <main>
+    <form method="post" action="/">
+        <fieldset>
+            <legend>Tell us about the book</legend>
+            <div class="row">
+            <label for="bookTitle">Title</label><input type="text" name="bookTitle">
+            </div>
+            <div class="row">
+                <label for="bookDescription">Description</label><textarea name="bookDescription"></textarea>
+            </div>
+        </fieldset>
+        <input class="large-friendly" type="submit" value="Add Book">
+    </form>
+
+<% if (books[0]){ %>
+    <table><thead><tr><th>Title</th><th>Description</th></tr></thead>
+<% books.forEach(book=>{ %>
+    <tr><td><%= book.bookTitle %></td><td><%= book.bookDescription %></td></tr>
+<% });%>
+</table>
+<% } %>
+    </main>
+</body>
+</html>
